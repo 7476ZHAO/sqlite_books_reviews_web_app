@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Ensure the design is responsive */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e0e0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Form and button alignment */
+        #addBook, #addReview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input, textarea, button {
+            margin: 10px 5px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        /* Styling for book shelf */
+        .shelf {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: #b0b0b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Placeholder for books */
+        .book {
+            width: 150px;
+            height: 200px;
+            background-color: #d0d0d0;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #showBooksButton, #showReviewsButton {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #666;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #showBooksButton:hover, #showReviewsButton:hover {
+            background-color: #888;
+        }
+
+        /* Review styling */
+        #reviewList {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            background-color: #dcdcdc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Book Reviews</h1>
+
+    <!-- Add Book Section -->
+    <div id="addBook">
+        <h2>Add a Book</h2>
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="publicationYear" placeholder="Publication Year">
+        <button onclick="addBook()">Add</button>
+    </div>
+
+    <!-- Your Book Shelf -->
+    <div id="bookShelf">
+        <h2>Your Book Shelf</h2>
+        <div id="bookList" class="shelf">
+            <!-- Books will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Show All Books Button -->
+    <button id="showBooksButton" onclick="showAllBooks()">Show All Books</button>
+
+    <!-- Display All Books -->
+    <div id="allbooks" class="shelf">
+        <!-- All books from server will appear here -->
+    </div>
+
+    <!-- Add Review Section -->
+    <div id="addReview">
+        <h2>Add a Review</h2>
+        <input type="text" id="bookId" placeholder="Book ID">
+        <input type="text" id="userName" placeholder="Your Name">
+        <input type="number" id="rating" min="1" max="5" placeholder="Rating (1-5)">
+        <textarea id="comment" placeholder="Your review..."></textarea>
+        <button onclick="addReview()">Submit Review</button>
+    </div>
+
+    <!-- Review List -->
+    <div id="reviewList">
+        <h2>Reviews</h2>
+        <!-- Reviews will be dynamically displayed here -->
+    </div>
+
+    <!-- Show All Reviews Button -->
+    <button id="showReviewsButton" onclick="showAllReviews()">Show All Reviews</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
