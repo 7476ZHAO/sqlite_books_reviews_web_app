@@ -1,134 +1,95 @@
-/* Basic page styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e0e0e0; /* Light gray background */
-    padding: 20px;
-}
-
-/* Title styling */
-h1 {
-    text-align: center;
-    color: #444; /* Darker gray for the title */
-}
-
-/* Book shelf styling */
-#bookShelf {
-    margin: 20px 0;
-}
-
-.shelf {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: #b0b0b0; /* Medium gray for the shelf */
-    padding: 20px;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-}
-
-/* Styling individual books */
-.book {
-    width: 150px;
-    height: 200px;
-    margin: 10px;
-    background-color: #d0d0d0; /* Lighter gray for books */
-    color: #333;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px; /* More rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Book title and year styling */
-.book-title {
-    font-size: 1.2em;
-    margin: 0;
-}
-
-.book-year {
-    font-size: 0.9em;
-    color: #666; /* Medium gray for year */
-}
-
-/* Add book form */
-#addBook {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Align input fields beside each other */
-#addBook input {
-    margin: 10px 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #aaa; /* Slightly darker gray for borders */
-    display: inline-block; /* Inline to align beside each other */
-}
-
-#addBook button {
-    background-color: #555; /* Dark gray */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#addBook button:hover {
-    background-color: #777; /* Lighter gray on hover */
-}
-
-/* Show Books button */
+/* Add styles for the button */
 #showBooksButton {
-    margin: 20px auto;
-    display: block;
-    background-color: #666; /* Medium gray */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  margin: 20px; /* Adjust the margin as needed */
 }
 
-#showBooksButton:hover {
-    background-color: #888; /* Lighter gray on hover */
+/* Header / Navigation bar */
+.navbar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 24px;
 }
 
-/* Styling for review submission form */
-#addReview {
-    margin: 20px 0;
-    text-align: center;
+/* Form styling */
+.form-section {
+  margin: 20px;
 }
 
-#addReview input, #addReview textarea {
-    margin: 10px 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    display: inline-block;
+/* Bookshelf grid layout */
+.bookshelf {
+  display: grid; /* grid layout for bookshelf */
+  grid-template-columns: repeat(6, 1fr); /* 6 books per row */
+  gap: 20px; /* space between books */
+  margin: 20px; /* spacing around shelf */
 }
 
-#addReview button {
-    background-color: #555;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+/* Book card styling */
+.book {
+  border: 1px solid #ddd;
+  border-radius: 10px; /* rounded corners */
+  padding: 10px;
+  text-align: center; /* center content */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow for depth */
+  transition: transform 0.2s ease; /* smooth hover animation */
 }
 
-#addReview button:hover {
-    background-color: #777;
+/* Hover effect */
+.book:hover {
+  transform: scale(1.05); /* hover zoom effect */
 }
 
-/* Review list styling */
-.review {
-    background-color: #f0f0f0; /* Light gray for reviews */
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px; /* More rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for reviews */
+/* Book cover image */
+.book img {
+  width: 100%; /* match card width */
+  height: 200px; /* match card height */
+  object-fit: cover; /* auto adjust image to fit card */
+  border-radius: 8px;
+}
+
+/* Book title */
+.book h3 {
+  font-size: 18px; /* readable title size */
+  margin: 10px 0 5px 0; /* spacing */
+}
+
+/* Author name */
+.book p {
+  font-size: 14px; /* smaller author text */
+  color: #555; /* softer color */
+}
+
+.book-reviews p {
+  font-size: 13px;
+  color: #666;
+  margin: 3px 0;
+}
+
+.view-btn {
+  background-color: gray;
+  color: white;
+}
+
+.comment-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.book button:hover {
+  background-color: #2980b9;
+} /* added */
+
+.book button {
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
 }
